@@ -58,6 +58,7 @@ map('n', '<leader>w', ':w<CR>', opt)
 map('n', '<leader>wq', ':wq<CR>', opt)
 
 -- 列表操作快捷键
+map('n', '<M-b>', ':NvimTreeToggle<CR>', opt)
 map('n', '∫', ':NvimTreeToggle<CR>', opt)
 map('n', '<F1>', ':NvimTreeToggle<CR>', opt)
 map('n', '<leader>b', ':NvimTreeToggle<CR>', opt)
