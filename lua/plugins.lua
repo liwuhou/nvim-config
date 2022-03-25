@@ -7,7 +7,6 @@ packer.startup({
     ----------- colorscheme ------------
     use 'folke/tokyonight.nvim'
     use "ful1e5/onedark.nvim"
-    use 'EdenEast/nightfox.nvim'
     ------------------------------------
     use { 
       'kyazdani42/nvim-tree.lua',
@@ -29,6 +28,22 @@ packer.startup({
       requires = { 'nvim-lua/plenary.nvim' }
     }
     use 'brglng/vim-im-select'
+    use 'glepnir/dashboard-nvim'
+    use 'ahmedkhalf/project.nvim'
+    -- lspconfig
+    use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+    -- nvim-cmp
+    use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
+    use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
+    use 'hrsh7th/cmp-path'     -- { name = 'path' }
+    use 'hrsh7th/cmp-cmdline'  -- { name = 'cmdline' }
+    use 'hrsh7th/nvim-cmp'
+    -- vsnip
+    use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
+    use 'hrsh7th/vim-vsnip'
+    use 'rafamadriz/friendly-snippets'
+    -- lspkind
+    use 'onsails/lspkind-nvim'   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   end,
   config = {
     -- 并发数限制

@@ -33,6 +33,8 @@ vim.o.smartindent = true
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
 vim.o.smartcase = true
+-- 配置剪切板
+vim.o.clipboard = 'unnamedplus'
 -- 搜索高亮
 vim.o.hlsearch = true
 -- 边输入边搜索
@@ -57,7 +59,7 @@ vim.o.swapfile = false
 -- smaller updatetime
 vim.o.updatetime = 300
 -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
-vim.o.timeoutlen = 350
+vim.o.timeoutlen = 500
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -80,3 +82,9 @@ vim.o.pumheight = 10
 vim.o.showtabline = 2
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
+-- 开启折叠
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+vim.opt.foldlevel = 99 
+
