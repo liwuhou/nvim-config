@@ -8,9 +8,9 @@ packer.startup({
     use 'folke/tokyonight.nvim'
     use "ful1e5/onedark.nvim"
     ------------------------------------
-    use { 
+    use {
       'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons' 
+      requires = 'kyazdani42/nvim-web-devicons'
     }
     use {
       'akinsho/bufferline.nvim', requires = {
@@ -23,7 +23,7 @@ packer.startup({
       requires = { 'kyazdani42/nvim-web-devicons' }
     }
     use 'arkav/lualine-lsp-progress'
-    use { 
+    use {
       'nvim-telescope/telescope.nvim',
       requires = { 'nvim-lua/plenary.nvim' }
     }

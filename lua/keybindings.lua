@@ -5,6 +5,9 @@ local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
 local pluginKeys = {}
 
+-- 回到 Dashboard
+map('n', '<space><leader>h', ':Dashboard<CR>', opt)
+
 -- 分屏
 map('n', '<leader><leader>v', ':vsp<CR>', opt)
 map('n', '<leader><leader>h', ':sp<CR>', opt)
@@ -52,10 +55,10 @@ map('n', '<C-j>', '8j', opt)
 map('n', '<C-k>', '8k', opt)
 
 -- 快捷退出
-map('n', '<leader>q', ':q<CR>', opt)
-map('n', '<leader>qq', ':q!<CR>', opt)
-map('n', '<leader>w', ':w<CR>', opt)
-map('n', '<leader>wq', ':wq<CR>', opt)
+-- map('n', '<space>q', ':q<CR>', opt)
+-- map('n', '<space>qq', ':q!<CR>', opt)
+-- map('n', '<space>w', ':w<CR>', opt)
+-- map('n', '<space>wq', ':wq<CR>', opt)
 
 -- 列表操作快捷键
 map('n', '<M-b>', ':NvimTreeToggle<CR>', opt)
@@ -63,7 +66,6 @@ map('n', '∫', ':NvimTreeToggle<CR>', opt)
 map('i', '∫', ':NvimTreeToggle<CR>', opt)
 map('n', '<F1>', ':NvimTreeToggle<CR>', opt)
 map('n', '<leader>b', ':NvimTreeToggle<CR>', opt)
-map('i', '<leader>b', ':NvimTreeToggle<CR>', opt)
 
 -- bufferline
 -- 左右切换
@@ -74,9 +76,10 @@ map('n', ']', ':BufferLineCycleNext<CR>', opt)
 -- 关闭
 -- 'moll/vim-bbye'
 map('n', '<C-w>', ':Bdelete!<CR>', opt)
-map('n', '<leader>bl', ':BufferLineCloseRight<CR>', opt)
-map('n', '<leader>bh', ':BufferLineCloseLeft<CR>', opt)
-map('n', '<leader>bc', ':BufferLinePickClose<CR>', opt)
+-- map('n', '<leader>w', ':Bdelete!<CR>', opt)
+map('n', '<space>bl', ':BufferLineCloseRight<CR>', opt)
+map('n', '<space>bh', ':BufferLineCloseLeft<CR>', opt)
+map('n', '<space>pk', ':BufferLinePickClose<CR>', opt)
 
 -- Telescope
 -- 查找文件
@@ -89,7 +92,7 @@ map('n', '<leader>cf', ':Telescope grep_string<CR>', opt)
 map('n', '<leader>`', ':Telescope marks<CR>', opt)
 -- 当前的 buffers
 -- map('n', '<C-o>', ':Telescope buffers<CR>', opt)
-map('n', '<leader><leader>o', ':Telescope buffers<CR>', opt)
+map('n', '<leader>o', ':Telescope buffers<CR>', opt)
 -- 格式化全文
 map('n', '<space>=', 'gg=G<C-o>', opt)
 
@@ -181,6 +184,10 @@ pluginKeys.cmp = function(cmp)
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
+    ['<Esc>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
     ['≥'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     ['≤'] = cmp.mapping({
       i = cmp.mapping.abort(),
@@ -189,6 +196,10 @@ pluginKeys.cmp = function(cmp)
     -- 确认
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
+    ['<Tab>'] = cmp.mapping.confirm({
+      select = true ,
+      behavior = cmp.ConfirmBehavior.Replace
+    }),
     ['<CR>'] = cmp.mapping.confirm({
       select = true ,
       behavior = cmp.ConfirmBehavior.Replace
