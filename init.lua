@@ -15,5 +15,7 @@ require('plugin-config.im-select')
 require('plugin-config.dashboard')
 require('plugin-config.nvim-treesitter')
 require('plugin-config.lsp-setup')
+require('plugin-config.lsp.ui')
 require('plugin-config.nvim-cmp')
+require('plugin-config.indent-blankline')
 

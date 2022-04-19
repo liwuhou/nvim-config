@@ -42,8 +42,12 @@ packer.startup({
     use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
     use 'hrsh7th/vim-vsnip'
     use 'rafamadriz/friendly-snippets'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     -- lspkind
-    use 'onsails/lspkind-nvim'   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'onsails/lspkind-nvim'
+    -- indent_blankline
+    use 'lukas-reineke/indent-blankline.nvim'
+    use 'tami5/lspsaga.nvim'
   end,
   config = {
     -- 并发数限制

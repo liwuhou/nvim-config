@@ -92,7 +92,7 @@ map('n', '<leader>cf', ':Telescope grep_string<CR>', opt)
 map('n', '<leader>`', ':Telescope marks<CR>', opt)
 -- 当前的 buffers
 -- map('n', '<C-o>', ':Telescope buffers<CR>', opt)
-map('n', '<leader>o', ':Telescope buffers<CR>', opt)
+map('n', '<leader>t', ':Telescope buffers<CR>', opt)
 -- 格式化全文
 map('n', '<space>=', 'gg=G<C-o>', opt)
 
@@ -146,19 +146,20 @@ pluginKeys.treesitterList = {
 -- lsp 回调函数快捷键设置
 pluginKeys.maplsp = function(mapbuf)
   -- rename
-  mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
+  mapbuf('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opt)
   -- code action
-  mapbuf('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
+  mapbuf('n', '<space>ca', '<cmd>Lspsaga code_action<CR>', opt)
   -- go xx
-  mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-  mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
-  mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
+  mapbuf('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
+  mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+  mapbuf('n', 'gh', '<cmd>Lspsaga hover_doc<CR>', opt)
   mapbuf('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-  mapbuf('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
+  mapbuf('n', 'gr', '<cmd>Lspsaga lsp_finder<CR>', opt)
   -- diagnostic
   mapbuf('n', 'go', '<cmd>lua vim.diagnostic.open_float()<CR>', opt)
-  mapbuf('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
-  mapbuf('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
+  mapbuf('n', 'gp', '<cmd>Lspsaga show_live_diagnostics<CR>', opt)
+  mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
+  mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- leader + =
   mapbuf('n', '<space>fm', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
