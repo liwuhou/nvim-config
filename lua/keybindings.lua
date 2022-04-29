@@ -179,18 +179,9 @@ pluginKeys.cmp = function(cmp)
     -- 下一个
     ['<C-j>'] = cmp.mapping.select_next_item(),
     -- 出现补全
-    ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-l>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     -- 取消
-    ['<A-,>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    ['<Esc>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    ['≥'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['≤'] = cmp.mapping({
+    ['<C-c>'] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
@@ -198,10 +189,6 @@ pluginKeys.cmp = function(cmp)
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ['<Tab>'] = cmp.mapping.confirm({
-      select = true ,
-      behavior = cmp.ConfirmBehavior.Replace
-    }),
-    ['<CR>'] = cmp.mapping.confirm({
       select = true ,
       behavior = cmp.ConfirmBehavior.Replace
     }),

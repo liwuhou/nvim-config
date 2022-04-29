@@ -32,6 +32,8 @@ packer.startup({
     use 'ahmedkhalf/project.nvim'
     -- lspconfig
     use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+    -- ts 增强插件
+    use { "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" }
     -- nvim-cmp
     use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
     use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
@@ -48,6 +50,8 @@ packer.startup({
     -- indent_blankline
     use 'lukas-reineke/indent-blankline.nvim'
     use 'tami5/lspsaga.nvim'
+    use 'b0o/schemastore.nvim'
+    use 'chemzqm/wxapp.vim'
   end,
   config = {
     -- 并发数限制

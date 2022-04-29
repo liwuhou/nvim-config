@@ -5,7 +5,11 @@ local lsp_installer = require "nvim-lsp-installer"
 -- { key: 语言 value: 配置文件 }
 local servers = {
   sumneko_lua = require 'plugin-config.lsp.lua', -- /lua/plugin-config/lsp/lua.lua
-  tsserver = {},
+  tsserver = require 'plugin-config.lsp.ts',
+  html = require 'plugin-config.lsp.html',
+  cssls = require 'plugin-config.lsp.css',
+  emmet_ls = require 'plugin-config.lsp.emmet',
+  jsonls = require 'plugin-config.lsp.json'
   -- cssls = {},
   -- volar = {},
   -- eslint = {},
